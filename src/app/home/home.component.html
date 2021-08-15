@@ -1,0 +1,18 @@
+<app-header></app-header>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4" *ngFor="let data of dataArray">
+                <div class="card">
+                    <img src="{{ data.avatar }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ data.first_name }} {{ data.last_name }}</h5>
+                        <p class="card-text">{{ data.email }}</p>
+                    </div>
+                </div>
+        </div>
+        <pagination [totalItems]="totalItems"  [itemsPerPage]="6" (pageChanged)="pageChanged($event)"></pagination>
+    </div>
+</div>
+
+<app-footer></app-footer>

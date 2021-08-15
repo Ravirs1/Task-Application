@@ -1,0 +1,38 @@
+.mt-5 {
+    margin-top: 5rem !important;
+}
+.label {
+    font-size: 2.5em !important;
+}
+
+input {
+    width: 80%;
+    padding: 0.3rem;
+    margin-top: 1rem;
+    margin-right: 5rem;
+}
+
+.main {
+    margin-top: 3rem;
+    margin-left: 1rem;
+}
+
+ul li {
+    list-style: none;
+    background: lightblue;
+    padding: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.right {
+    float: right;
+}
+
+.ml-1 {
+    margin-left: 1rem;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}

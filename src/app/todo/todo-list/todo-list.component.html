@@ -1,0 +1,44 @@
+<app-header></app-header>
+
+
+<div class="container">
+    <div class="col-sm-12 mt-5">
+        <label for="addItemInput" class="label">What would you like to add?</label>
+<br>
+        <input
+          #newItem
+          placeholder="add an item"
+          (keyup.enter)="addItem(newItem.value); newItem.value = ''"
+          class="lg-text-input"
+          id="addItemInput"
+        />
+        
+        <button class="btn btn-primary" (click)="addItem(newItem.value);newItem.value = ''">Add</button>
+    </div>
+</div>
+
+<div class="main">
+    <h2>My To Do List</h2>
+  
+    <ul>
+      <li *ngFor="let item of allItems; index as i">
+        <span>
+            <span *ngIf="!item.isEditable">
+        {{item.description}} 
+        </span>
+        <span *ngIf="item.isEditable">
+            <input type="text" [(ngModel)]="item.description">
+        </span>
+          <span class="right">
+          <span *ngIf="item.isEditable"><i class="fa fa-times cursor-pointer" aria-hidden="true" (click)="getItems(); item.isEditable = false"> </i></span>
+          <span *ngIf="item.isEditable"><i class="fa fa-save ml-1 cursor-pointer" aria-hidden="true" (click)="  item.isEditable = false ;updateItem(item, i);"> </i></span>
+          <span *ngIf="!item.isEditable"><i class="fa fa-pencil cursor-pointer" aria-hidden="true" (click)=" item.isEditable = true"> </i></span>
+          <span><i class="fa fa-trash ml-1 cursor-pointer" aria-hidden="true" (click)="removeItem(i)"> </i></span>
+        </span>
+    </span>  
+      </li>
+    </ul>
+  </div>
+
+<app-footer></app-footer>
+
